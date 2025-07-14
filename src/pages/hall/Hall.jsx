@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import moment from "moment";
 import "./Hall.css";
 
 function Hall() {
@@ -32,16 +33,22 @@ function Hall() {
             <div className="user">{item.userName}</div>
             <div className="time">{item.userId}</div>
             <div className="time">
-              {new Date(item.clearTime).toLocaleString("ko-KR", {
-                timeZone: "Asia/Seoul",
-                year: "numeric",
-                month: "2-digit",
-                day: "2-digit",
-                hour: "2-digit",
-                minute: "2-digit",
-                second: "2-digit",
-                hour12: false,
-              })}
+              {() => {
+                let origin = new Date(item.clearTime);
+                let local = moment(origin.getMilliseconds)
+                  .utcOffset("+09:00")
+                  .millisecond();
+                return new Date(local).toLocaleString("ko-KR", {
+                  timeZone: "Asia/Seoul",
+                  year: "numeric",
+                  month: "2-digit",
+                  day: "2-digit",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  second: "2-digit",
+                  hour12: false,
+                });
+              }}
             </div>
           </div>
         ))}

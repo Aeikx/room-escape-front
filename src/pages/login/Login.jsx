@@ -42,14 +42,17 @@ function Login() {
                 if (e.target.disabled) return;
                 e.target.disabled = true;
 
-                fetch("http://localhost:4000/login", {
-                  method: "post",
-                  credentials: "include",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify(userData),
-                })
+                fetch(
+                  "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/login",
+                  {
+                    method: "post",
+                    credentials: "include",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify(userData),
+                  }
+                )
                   .then((res) => res.json())
                   .then((res) => {
                     if (res) {

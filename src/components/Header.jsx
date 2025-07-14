@@ -13,7 +13,7 @@ function Header() {
       .then((res) => res.json())
       .then((data) => {
         if (data.loggedIn) {
-          console.log("로그인됨", data.userId);
+          console.log(data.userId, "로그인");
           document.getElementById("login").style.display = "None";
           document.getElementById("signup").style.display = "None";
           document.getElementById("logout").textContent =

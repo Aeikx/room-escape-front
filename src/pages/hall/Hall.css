@@ -1,82 +1,65 @@
 .hall-container {
   padding: 20px 16px;
-  background-color: #fefefe;
+  background-color: #ffffff;
   min-height: 100vh;
   box-sizing: border-box;
+  font-family: "Pretendard", sans-serif;
 }
 
 .hall-title {
   text-align: center;
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 24px;
-  font-weight: bold;
-  color: #222;
+  color: #111;
 }
 
 .hall-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  align-items: stretch;
-}
-
-.hall-entry {
-  display: flex;
+  gap: 16px;
   align-items: center;
-  padding: 14px 20px;
-  background-color: #ffffff;
-  border: 1px solid #ccc;
+}
+
+/* 랭킹 항목 */
+.hall-entry {
+  width: 100%;
+  max-width: 380px;
+  background-color: #f4f4f4;
   border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease;
+  padding: 18px 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.2s ease;
 }
 
-.hall-entry:hover {
-  transform: scale(1.01);
+.hall-entry.rank-1 {
+  background-color: #fff7cc;
+  border: 2px solid gold;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  transform: scale(1.02);
 }
 
-.rank {
+.rank-number {
   font-size: 1.6rem;
   font-weight: bold;
   color: #e74c3c;
-  margin-right: 12px;
-  flex-shrink: 0;
-  width: 60px;
+  margin-bottom: 4px;
   text-align: center;
 }
 
-.user {
-  font-size: 1.2rem;
+.nickname {
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #2c3e50;
-  flex-grow: 1;
-  text-align: left;
+  color: #333;
+  text-align: center;
 }
 
-.time {
-  font-size: 0.9rem;
-  color: #7f8c8d;
-  text-align: right;
-  white-space: nowrap;
-}
-
-@media screen and (max-width: 600px) {
-  .hall-entry {
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 8px;
-  }
-
-  .rank {
-    font-size: 1.4rem;
-    width: 48px;
-  }
-
-  .user {
-    font-size: 1rem;
-  }
-
-  .time {
-    font-size: 0.8rem;
-  }
+.clear-time {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 4px;
+  text-align: center;
 }

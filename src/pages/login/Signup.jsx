@@ -98,7 +98,18 @@ function Signup() {
               placeholder="비밀번호를 다시 입력해주세요"
             />
           </div>
-          <button type="submit" className="signup-button" disabled={loading}>
+          <button type="submit" style={{
+            padding: '12px 24px',
+            fontSize: '1rem',
+            backgroundColor: '#5a48a3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '6px',
+            cursor: 'pointer',
+            transition: 'background-color 0.2s ease',
+            width: '100%',
+            marginTop: '20px'
+          }} disabled={loading}>
             {loading ? "가입 중…" : "회원가입"}
           </button>
         </form>

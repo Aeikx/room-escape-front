@@ -32,7 +32,18 @@ function Login() {
               />
             </div>
             <button
-              className="login-button"
+              style={{
+                padding: '12px 24px',
+                fontSize: '1rem',
+                backgroundColor: '#5a48a3',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                cursor: 'pointer',
+                transition: 'background-color 0.2s ease',
+                width: '100%',
+                marginTop: '20px'
+              }}
               onClick={(e) => {
                 const userData = {
                   Id: document.getElementById("id").value,
@@ -53,11 +64,11 @@ function Login() {
                     body: JSON.stringify(userData),
                   }
                 )
-                  .then((res) => res.json())
                   .then((res) => {
+                    res.json();
                     if (res) {
                       location.href = "/";
-                      alert("로그인 완료");
+                      alert("로그인 성공");
                     } else {
                       alert("아이디 또는 비밀번호가 잘못되었습니다.");
                       location.reload();

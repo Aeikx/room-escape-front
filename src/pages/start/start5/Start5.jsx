@@ -36,17 +36,16 @@ function Start5() {
         <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
         <button
           style={{
-            padding: '10px 20px',
-            fontSize: '1em',
-            backgroundColor: '#4CAF50',
+            padding: '12px 24px',
+            fontSize: '1rem',
+            backgroundColor: '#5a48a3',
             color: 'white',
             border: 'none',
-            borderRadius: '5px',
+            borderRadius: '6px',
             cursor: 'pointer',
-            width: '80%',
-            maxWidth: '300px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            transition: 'background-color 0.3s ease'
+            transition: 'background-color 0.2s ease',
+            width: '100%',
+            marginTop: '20px'
           }}
           onClick={() => {
             if (document.getElementById("ans").value === "HIGH") {

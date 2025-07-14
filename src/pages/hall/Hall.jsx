@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import moment from "moment";
 import "./Hall.css";
 
 function Hall() {
@@ -18,21 +17,28 @@ function Hall() {
     )
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
         setList(res);
       });
   }, []);
+
+  const getRankEmoji = (index) => {
+    return index === 0 ? "🥇" : index === 1 ? "🥈" : index === 2 ? "🥉" : "";
+  };
 
   return (
     <div className="hall-container">
       <h1 className="hall-title">명예의 전당</h1>
       <div className="hall-list">
         {list.map((item, index) => (
-          <div className="hall-entry" key={index}>
-            <div className="rank">{index + 1}위</div>
-            <div className="user">{item.userName}</div>
-            <div className="time">{item.userId}</div>
-            <div className="time">{item.clearTime}</div>
+          <div
+            className={`hall-entry ${index === 0 ? "rank-1" : ""}`}
+            key={index}
+          >
+            <div className="rank-number">
+              {getRankEmoji(index)} {index + 1}위
+            </div>
+            <div className="nickname">{item.userName}</div>
+            <div className="clear-time">{item.clearTime}</div>
           </div>
         ))}
       </div>

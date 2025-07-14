@@ -8,7 +8,7 @@ function App() {
     <div className="app" lang="ko-KR">
       <main className="main-content">
         <h1>청주고 팬티도둑 찾기 대작전!!</h1>
-        <p>이곳에 페이지의 주요 내용이 표시됩니다.</p>
+        <p>문의사항 cjhigh2scape.gmail.com</p>
       </main>
       <Footer />
     </div>

@@ -47,8 +47,12 @@ function Start8() {
                 if (!res.ok) throw new Error("서버 응답 에러");
                 return res.json();
               })
-              .then(() => {
-                location.href = "/start8-end";
+              .then((data) => {
+                if (data.success) {
+                  location.href = "/start8-end";
+                } else {
+                  alert(data.message || "문제 풀이 실패");
+                }
               })
               .catch((err) => {
                 console.error("Fetch Error:", err);

@@ -4,9 +4,12 @@ import Cookies from "js-cookie";
 
 function Header() {
   useEffect(() => {
-    fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login", {
-      credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
-    })
+    fetch(
+      "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login",
+      {
+        credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data.loggedIn) {
@@ -48,9 +51,12 @@ function Header() {
           <a
             className="blue-links"
             onClick={() => {
-              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login", {
-                credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
-              })
+              fetch(
+                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login",
+                {
+                  credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
+                }
+              )
                 .then((res) => res.json())
                 .then((data) => {
                   if (!data.loggedIn) {
@@ -79,9 +85,12 @@ function Header() {
             id="logout"
             className="red-links"
             onClick={() => {
-              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/logout", {
-                credentials: "include",
-              });
+              fetch(
+                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/logout",
+                {
+                  credentials: "include",
+                }
+              );
               location.href = "/";
             }}
           >

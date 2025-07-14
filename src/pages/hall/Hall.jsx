@@ -32,9 +32,8 @@ function Hall() {
             <div className="user">{item.userName}</div>
             <div className="time">{item.userId}</div>
             <div className="time">
-              {(
-                new Date(item.clearTime).getMilliseconds() + 32400000
-              ).toLocaleString("ko-KR", {
+              {new Date(item.clearTime).toLocaleString("ko-KR", {
+                timeZone: "Asia/Seoul",
                 year: "numeric",
                 month: "2-digit",
                 day: "2-digit",

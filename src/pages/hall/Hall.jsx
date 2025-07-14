@@ -32,12 +32,7 @@ function Hall() {
             <div className="rank">{index + 1}위</div>
             <div className="user">{item.userName}</div>
             <div className="time">{item.userId}</div>
-            <div className="time">
-              {moment(new Date(item.clearTime).getMilliseconds())
-                .locale("ko")
-                .utcOffset("+18:00")
-                .format("llll")}
-            </div>
+            <div className="time">{item.clearTime}</div>
           </div>
         ))}
       </div>

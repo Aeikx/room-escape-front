@@ -31,22 +31,51 @@ function Start1() {
         </h4>
       </div>
       <img src="/q_img/q1.png" alt="문제 이미지" />
-      <p style={{ textAlign: 'center', fontSize: '1.1em', color: '#333', marginTop: '10px' }}>[Answer Type: 문자]</p>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-        <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
+      <p
+        style={{
+          textAlign: "center",
+          fontSize: "1.1em",
+          color: "#333",
+          marginTop: "10px",
+        }}
+      >
+        [Answer Type: 문자]
+      </p>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "10px",
+          marginTop: "20px",
+        }}
+      >
+        <input
+          type="text"
+          placeholder="답 입력"
+          id="ans"
+          style={{
+            padding: "10px",
+            fontSize: "1em",
+            borderRadius: "5px",
+            border: "1px solid #ccc",
+            width: "80%",
+            maxWidth: "300px",
+          }}
+        />
         <button
           style={{
-            padding: '10px 20px',
-            fontSize: '1em',
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            width: '80%',
-            maxWidth: '300px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            transition: 'background-color 0.3s ease'
+            padding: "10px 20px",
+            fontSize: "1em",
+            backgroundColor: "#5a48a3",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            width: "80%",
+            maxWidth: "300px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+            transition: "background-color 0.3s ease",
           }}
           onClick={() => {
             if (document.getElementById("ans").value === "HIGH") {

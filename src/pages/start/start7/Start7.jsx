@@ -35,20 +35,23 @@ function Start7() {
       <button
         onClick={() => {
           if (document.getElementById("ans").value === "HIGH") {
-            fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
-              method: "post",
-              credentials: "include",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ stage7: "clear" }),
-            })
+            fetch(
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
+              {
+                method: "post",
+                credentials: "include",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ stage7: "clear" }),
+              }
+            )
               .then((res) => {
                 if (!res.ok) throw new Error("서버 응답 에러");
                 return res.json();
               })
               .then(() => {
-                location.href = "/start8-end";
+                location.href = "/start7-end";
               })
               .catch((err) => {
                 console.error("Fetch Error:", err);

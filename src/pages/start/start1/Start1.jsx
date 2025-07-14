@@ -35,14 +35,17 @@ function Start1() {
       <button
         onClick={() => {
           if (document.getElementById("ans").value === "HIGH") {
-            fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
-              method: "post",
-              credentials: "include",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ stage1: "clear" }),
-            })
+            fetch(
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
+              {
+                method: "post",
+                credentials: "include",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ stage1: "clear" }),
+              }
+            )
               .then((res) => {
                 if (!res.ok) throw new Error("서버 응답 에러");
                 return res.json();
@@ -56,7 +59,6 @@ function Start1() {
               });
           } else {
             alert("틀렸습니다!");
-            fasdfasdfa;
           }
         }}
       >

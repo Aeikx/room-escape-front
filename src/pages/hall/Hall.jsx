@@ -33,21 +33,10 @@ function Hall() {
             <div className="user">{item.userName}</div>
             <div className="time">{item.userId}</div>
             <div className="time">
-              {() => {
-                let origin = new Date(item.clearTime);
-                return moment(origin.getMilliseconds)
-                  .utcOffset("+09:00")
-                  .toLocaleString("ko-KR", {
-                    timeZone: "Asia/Seoul",
-                    year: "numeric",
-                    month: "2-digit",
-                    day: "2-digit",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    second: "2-digit",
-                    hour12: false,
-                  });
-              }}
+              {moment(item.clearTime)
+                .locale("ko")
+                .utcOffset("+18:00")
+                .format("ddd MMM D YYYY HH:MM:ss")}
             </div>
           </div>
         ))}

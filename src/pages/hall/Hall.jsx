@@ -36,7 +36,7 @@ function Hall() {
               {moment(new Date(item.clearTime).getMilliseconds())
                 .locale("ko")
                 .utcOffset("+18:00")
-                .format("ddd MMM D YYYY HH:MM:ss")}
+                .format("llll")}
             </div>
           </div>
         ))}

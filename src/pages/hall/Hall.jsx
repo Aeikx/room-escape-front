@@ -5,13 +5,16 @@ function Hall() {
   const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/hall", {
-      method: "get",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
+    fetch(
+      "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/hall",
+      {
+        method: "get",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    )
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
@@ -29,7 +32,9 @@ function Hall() {
             <div className="user">{item.userName}</div>
             <div className="time">{item.userId}</div>
             <div className="time">
-              {new Date(item.clearTime).toLocaleString("ko-KR", {
+              {(
+                new Date(item.clearTime).getMilliseconds() + 32400000
+              ).toLocaleString("ko-KR", {
                 year: "numeric",
                 month: "2-digit",
                 day: "2-digit",

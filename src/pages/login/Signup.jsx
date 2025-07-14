@@ -82,6 +82,8 @@ function Signup() {
               type="password"
               id="password"
               name="password"
+              minlength="4"
+              maxlength="100"
               required
               placeholder="비밀번호를 입력해주세요"
             />

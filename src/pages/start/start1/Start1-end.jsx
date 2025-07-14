@@ -44,19 +44,19 @@ function Start1End() {
       <div className="start-container">
         <button
           style={{
-            padding: '10px 20px',
-            fontSize: '1em',
-            backgroundColor: '#4CAF50',
-            color: 'white',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-            width: '80%',
-            maxWidth: '300px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            transition: 'background-color 0.3s ease',
-            margin: '20px auto', // 중앙 정렬 및 상하 여백 추가
-            display: 'block' // 블록 요소로 만들어 margin: auto 적용
+            padding: "10px 20px",
+            fontSize: "1em",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            width: "100%",
+            maxWidth: "300px",
+            boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
+            transition: "background-color 0.3s ease",
+            margin: "20px auto", // 중앙 정렬 및 상하 여백 추가
+            display: "block", // 블록 요소로 만들어 margin: auto 적용
           }}
           onClick={() => (location.href = "/start2")}
         >

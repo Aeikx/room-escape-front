@@ -37,7 +37,7 @@ function Header() {
     <header className="header">
       <div className="header-title">
         <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
-          test
+          신관
         </a>
       </div>
       <button className="hamburger-menu" onClick={toggleMenu}>

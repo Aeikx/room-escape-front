@@ -1,7 +1,9 @@
 html {
   box-sizing: border-box;
 }
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
@@ -30,7 +32,8 @@ body {
   margin-top: 60px; /* 헤더 아래로 콘텐츠를 밀어내기 위한 여백 추가 */
 }
 
-@media (max-width: 768px) { /* 모바일용 중단점을 768px로 변경 */
+@media (max-width: 768px) {
+  /* 모바일용 중단점을 768px로 변경 */
   .login-container {
     padding-top: 0; /* 컨테이너에 padding-top 없음, 상자의 margin이 처리 */
     justify-content: flex-start;

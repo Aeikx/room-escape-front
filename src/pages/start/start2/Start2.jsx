@@ -31,36 +31,56 @@ function Start2() {
         </h4>
       </div>
       <img src="/q_img/q1.png" alt="문제 이미지" />
-      <input type="text" placeholder="답 입력" id="ans" />
-      <button
-        onClick={() => {
-          if (document.getElementById("ans").value === "HIGH") {
-            fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
-              method: "post",
-              credentials: "include",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ stage2: "clear" }),
-            })
-              .then((res) => {
-                if (!res.ok) throw new Error("서버 응답 에러");
-                return res.json();
+      <p style={{ textAlign: 'center', fontSize: '1.1em', color: '#333', marginTop: '10px' }}>[Answer Type: 문자]</p>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
+        <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
+        <button
+          style={{
+            padding: '10px 20px',
+            fontSize: '1em',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            width: '80%',
+            maxWidth: '300px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'background-color 0.3s ease'
+          }}
+          onClick={() => {
+            if (document.getElementById("ans").value === "HIGH") {
+              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
+                method: "post",
+                credentials: "include",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ stage2: "clear" }),
               })
-              .then(() => {
-                location.href = "/start2-end";
-              })
-              .catch((err) => {
-                console.error("Fetch Error:", err);
-                alert("서버 요청 실패");
-              });
-          } else {
-            alert("틀렸습니다!");
-          }
-        }}
-      >
-        제출
-      </button>
+                .then((res) => {
+                  if (!res.ok) throw new Error("서버 응답 에러");
+                  return res.json();
+                })
+                .then((data) => {
+                  if (data.success) {
+                    location.href = "/start2-end";
+                  } else {
+                    alert(data.message || "문제 풀이 실패");
+                  }
+                })
+                .catch((err) => {
+                  console.error("Fetch Error:", err);
+                  alert("서버 요청 실패");
+                });
+            } else {
+              alert("틀렸습니다!");
+            }
+          }}
+        >
+          제출
+        </button>
+      </div>
     </div>
   );
 }

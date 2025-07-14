@@ -12,11 +12,24 @@ function Login() {
           <form>
             <div className="input-group">
               <label htmlFor="id">아이디</label>
-              <input id="id" name="id" required />
+              <input
+                id="id"
+                name="id"
+                minlength="2"
+                maxlength="10"
+                placeholder="아이디를 입력해주세요"
+                required
+              />
             </div>
             <div className="input-group">
               <label htmlFor="password">비밀번호</label>
-              <input type="password" id="password" name="password" required />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="비밀번호를 입력해주세요"
+                required
+              />
             </div>
             <button
               className="login-button"
@@ -29,7 +42,7 @@ function Login() {
                 if (e.target.disabled) return;
                 e.target.disabled = true;
 
-                fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/login", {
+                fetch("http://localhost:4000/login", {
                   method: "post",
                   credentials: "include",
                   headers: {

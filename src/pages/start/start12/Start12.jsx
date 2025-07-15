@@ -1,69 +1,66 @@
 import React from "react";
-import "./Start12.css";
+import "../start1/Start1.css";
 
 function Start12() {
   return (
-    <div className="start12-container">
-      <h1>영어전용실 B - 12번째 방</h1>
-      <img src="/env_img/env1.png" alt="방 이미지" />
-      <div>
+    <div className="start-container">
+      <h1>회의실</h1>
+      <img src="/env_img/env12.jpeg" alt="방 이미지" />
+      <div className="narrative-text">
         <h4>
-          &nbsp;벽을 더듬어 조심스레 불을 켰다. 희미하게 켜지는 형광등 아래,
-          익숙한 교실이 모습을 드러냈다. 우리 학교 신관, 영어전용실B. 오늘 7교시
-          수업 시간에 이곳에서 잠들었던 기억이 어렴풋이 떠올랐다.
+          &nbsp;지금까지의 쪽지들을 되짚어보면, 이 문제들을 만들어 놓은 사람은
+          어쩌면 이미, 더는 문제를 만들 수 없는 시간 속에 머물고 있는 듯했다.
         </h4>
         <h4>
-          &nbsp;문을 열어보려 했지만, 손잡이는 쉽게 돌아가지 않았다. 닫힌 문
-          너머는 정적만이 감돌았다. 창밖의 풍경도 이상하게 느껴졌다. 늦은
-          시간이라는 건 알 수 있었지만, 그 시간까지도 내가 깨어나지 않았다는
-          점이 이상했다. 무엇보다, 안에서 사람이 있는지 확인도 하지 않고 누군가
-          문을 잠갔다는 건 납득되지 않았다.
+          &nbsp;그러나 그가 몸조차 일으킬 수 없었다면, 도대체 이 수많은 문제들은
+          어떻게 이 교실 곳곳에 남겨진 것일까.
         </h4>
         <h4>
-          &nbsp;주머니를 뒤졌지만, 휴대폰은 없었다. 수업 시간이라 소지하지 않고
-          있었던 게 기억났다. 누구에게도 연락할 수 없는 상황이었다.
+          &nbsp;그리고 그 쪽지들은, 누가, 언제, 어떤 방식으로 이 자리에 두었던
+          걸까.
+        </h4>
+        <h4>&nbsp;이해되지 않는 것들이 하나둘씩 고여간다.</h4>
+        <h4>
+          &nbsp;꽤 오랜 시간이 흐른 것 같은데도, 창밖의 어둠은 조금도 옅어질
+          기미를 보이지 않는다. 마치 이 공간의 시계만 어딘가에서 멈춰 있는
+          것처럼.
         </h4>
         <h4>
-          &nbsp;어떻게 해야 할지 정리되지 않은 생각 속에서 교실을 천천히
-          돌아다니다, 교탁 위에 놓인 상자 하나를 발견했다. 작고 묵직한 금속
-          상자. 영문 자물쇠로 잠겨 있었고, 그 위에 종이 한 장이 덩그러니 얹혀
-          있었다.
+          &nbsp;나는 상자에 적혀 있던 ‘회의실’로 발을 옮겼다. 그곳에도 상자는
+          놓여 있었다.
+        </h4>
+        <h4>
+          &nbsp;그리고 문득, 무언가가 끝에 가까워지고 있다는 예감이 들었다.
         </h4>
       </div>
+      <h2 className="question">문제</h2>
       <img src="/q_img/q12.png" alt="문제 이미지" />
-      <p style={{ textAlign: 'center', fontSize: '1.1em', color: '#333', marginTop: '10px' }}>[Answer Type: 문자]</p>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-        <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
+      <h4>가능한 &lt;a,b&gt;순서쌍의 개수는?</h4>
+      <p className="answer-type">[Answer Type: 숫자]</p>
+      <div className="answer-section">
+        <input type="text" placeholder="답 입력" id="ans" />
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
+          className="submit-button"
           onClick={() => {
-            if (document.getElementById("ans").value === "HIGH") {
-              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
-                method: "post",
-                credentials: "include",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ stage12: "clear" }),
-              })
+            if (document.getElementById("ans").value === "20") {
+              fetch(
+                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
+                {
+                  method: "post",
+                  credentials: "include",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ stage11: "clear" }),
+                }
+              )
                 .then((res) => {
                   if (!res.ok) throw new Error("서버 응답 에러");
                   return res.json();
                 })
                 .then((data) => {
                   if (data.success) {
-                    location.href = "/start12-end";
+                    location.href = "/start11-end";
                   } else {
                     alert(data.message || "문제 풀이 실패");
                   }

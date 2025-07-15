@@ -1,22 +1,25 @@
 import React from "react";
-import "./Start6.css";
+import "../start1/Start1.css";
 
 function Start6End() {
   return (
-    <div className="start6-container">
-      <h1>영어전용실 B - 6번째 방</h1>
-      <div>
+    <div className="end-container">
+      <h1>기술공학실</h1>
+      <div className="narrative-text">
         <h4>
-          &nbsp;종이가 의미하는 단어를 자물쇠에 입력하니 상자가 열렸다. 상자에는
-          잘 접어진 쪽지 한 장이 있었다.
+          &nbsp;두 자리 숫자를 자물쇠에 입력하니, 상자가 열렸다. 이번엔 자물쇠가
+          있나 정도만 확인했던 터라, 이게 두 자리 답일 줄 알았으면 그냥 찍어볼
+          걸 그랬다는 조금 늦은 후회가 들었다.
         </h4>
         <h4>
-          &nbsp;'나는 문제를 내는 걸 좋아했다. 이상한 질문 같은 거. 정답은
-          하나지만, 가끔 다른 답도 괜찮아 보이면 더 재미있었다.
+          &nbsp;상자 안엔 쪽지는 없었고, 이전처럼 네 자리 숫자가 바닥에 적혀
+          있었다. 다만 이번엔 그 숫자가 어떤 교실의 것인지 함께 표시되어 있었다.
+          툴툴거리던 내 마음을 눈치라도 챈 걸까. 다음 장소는 컴퓨터실이었다.
         </h4>
         <h4>
-          &nbsp;사람들은 대충 넘겼지만, 가끔 진짜로 풀어보려는 사람이 있으면
-          기분이 좋았다.
+          &nbsp;지금까지 풀어온 문제들을 곱씹어 보니 꽤 다양한 분야를 다루고
+          있었다. 그리고 그 분야들은, 어쩐지 각 교실의 용도와 관련이 있었던 것
+          같았다.
         </h4>
         <h4>
           &nbsp;그중에서도 내가 마음에 드는 문제들은 따로 모아뒀다. 잘
@@ -24,37 +27,13 @@ function Start6End() {
           생각하면서.
         </h4>
         <h4>
-          &nbsp;혹시 그 친구가 이 쪽지를 봤다면, 지금쯤 그 문제들을 풀고
-          있을지도 모른다.
-        </h4>
-        <h4>&nbsp;그렇다면, 힘내. 이번 문제들도 내가 아끼는 것들이야.'</h4>
-        <h4>
-          &nbsp;쪽지의 의미를 곱씹어보기도 전에, 이걸 읽고 있을 시간이 있는 게
-          맞는가 싶었다. 어떻게든 이 교실을 벗어나야 한다는 생각이 먼저 들었다.
-          지금 나가도 모자랄 판에, 이런 상자를 열겠다고 시간을 쓴 게 후회됐다.
-        </h4>
-        <h4>
-          &nbsp;다시 교실을 둘러보다가, 열리지 않던 문으로 향했다. 문고리를 한
-          번 더 조심스럽게 돌려보았다.
-        </h4>
-        <h4>
-          &nbsp;'철컥' 아무런 저항도 없이, 굳게 닫혀 있던 문이 아주 쉽게 열렸다.
+          &nbsp;그렇다면, 이번엔 컴퓨터나 프로그래밍과 관련된 문제일까. 그런
+          생각을 하며, 문을 열고 컴퓨터실로 향했다.
         </h4>
       </div>
-      <div className="start-container">
+      <div className="next-button-container">
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
+          className="next-button"
           onClick={() => (location.href = "/start7")}
         >
           다음

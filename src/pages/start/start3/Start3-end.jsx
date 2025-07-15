@@ -1,60 +1,25 @@
 import React from "react";
-import "./Start3.css";
+import "../start1/Start1.css";
 
 function Start3End() {
   return (
-    <div className="start3-container">
-      <h1>영어전용실 B - 3번째 방</h1>
-      <div>
+    <div className="end-container">
+      <h1>음악실</h1>
+      <div className="narrative-text">
         <h4>
-          &nbsp;종이가 의미하는 단어를 자물쇠에 입력하니 상자가 열렸다. 상자에는
-          잘 접어진 쪽지 한 장이 있었다.
+          &nbsp;역시, 이 종이도 일종의 악보였다.<br /> 처음엔 생소해 보였지만, <br />자세히
+          들여다보니 어릴 적 피아노 학원에서 몇 번이나 쳐본 기억이 있는 익숙한
+          멜로디였다.
         </h4>
         <h4>
-          &nbsp;'나는 문제를 내는 걸 좋아했다. 이상한 질문 같은 거. 정답은
-          하나지만, 가끔 다른 답도 괜찮아 보이면 더 재미있었다.
-        </h4>
-        <h4>
-          &nbsp;사람들은 대충 넘겼지만, 가끔 진짜로 풀어보려는 사람이 있으면
-          기분이 좋았다.
-        </h4>
-        <h4>
-          &nbsp;그중에서도 내가 마음에 드는 문제들은 따로 모아뒀다. 잘
-          만들었다고 생각한 것들. 언젠가 누군가 보여줄 수 있으면 좋겠다고
-          생각하면서.
-        </h4>
-        <h4>
-          &nbsp;혹시 그 친구가 이 쪽지를 봤다면, 지금쯤 그 문제들을 풀고
-          있을지도 모른다.
-        </h4>
-        <h4>&nbsp;그렇다면, 힘내. 이번 문제들도 내가 아끼는 것들이야.'</h4>
-        <h4>
-          &nbsp;쪽지의 의미를 곱씹어보기도 전에, 이걸 읽고 있을 시간이 있는 게
-          맞는가 싶었다. 어떻게든 이 교실을 벗어나야 한다는 생각이 먼저 들었다.
-          지금 나가도 모자랄 판에, 이런 상자를 열겠다고 시간을 쓴 게 후회됐다.
-        </h4>
-        <h4>
-          &nbsp;다시 교실을 둘러보다가, 열리지 않던 문으로 향했다. 문고리를 한
-          번 더 조심스럽게 돌려보았다.
-        </h4>
-        <h4>
-          &nbsp;'철컥' 아무런 저항도 없이, 굳게 닫혀 있던 문이 아주 쉽게 열렸다.
+          &nbsp;문제를 풀었다는 확신은 있었지만, 이번엔 쪽지가 있지도 않았고,
+          무언가가 열린 듯한 기척도 느껴지지 않았다. 정답이 맞았는지 확신할 수는
+          없었지만, 이 문제가 악보를 의미하고 있었다는 사실은 분명했다.
         </h4>
       </div>
-      <div className="start-container">
+      <div className="next-button-container">
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
+          className="next-button"
           onClick={() => (location.href = "/start4")}
         >
           다음

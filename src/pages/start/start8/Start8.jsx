@@ -1,62 +1,53 @@
 import React from "react";
-import "./Start8.css";
+import "../start1/Start1.css";
 
 function Start8() {
   return (
-    <div className="start8-container">
-      <h1>영어전용실 B - 8번째 방</h1>
-      <img src="/env_img/env1.png" alt="방 이미지" />
-      <div>
+    <div className="start-container">
+      <h1>학생 동아리실</h1>
+      <img src="/env_img/env8.jpeg" alt="방 이미지" />
+      <div className="narrative-text">
         <h4>
-          &nbsp;벽을 더듬어 조심스레 불을 켰다. 희미하게 켜지는 형광등 아래,
-          익숙한 교실이 모습을 드러냈다. 우리 학교 신관, 영어전용실B. 오늘 7교시
-          수업 시간에 이곳에서 잠들었던 기억이 어렴풋이 떠올랐다.
+          &nbsp;갑작스런 고백처럼 느껴진 ‘고맙다’는 말에 당황스러움이 앞섰지만,
+          그간 받아온 쪽지들 중 가장 직접적이고 무슨 말을 하려는지 명확하게
+          전해지는 글이었다.
         </h4>
         <h4>
-          &nbsp;문을 열어보려 했지만, 손잡이는 쉽게 돌아가지 않았다. 닫힌 문
-          너머는 정적만이 감돌았다. 창밖의 풍경도 이상하게 느껴졌다. 늦은
-          시간이라는 건 알 수 있었지만, 그 시간까지도 내가 깨어나지 않았다는
-          점이 이상했다. 무엇보다, 안에서 사람이 있는지 확인도 하지 않고 누군가
-          문을 잠갔다는 건 납득되지 않았다.
+          &nbsp;그 순간부터, 이 문제들을 만들고 교실마다 배치한 ‘누군가’의
+          정체에 대한 호기심이 점점 더 뚜렷해졌다.
         </h4>
         <h4>
-          &nbsp;주머니를 뒤졌지만, 휴대폰은 없었다. 수업 시간이라 소지하지 않고
-          있었던 게 기억났다. 누구에게도 연락할 수 없는 상황이었다.
+          &nbsp;컴퓨터실을 나와 1층의 아직 가보지 않은 교실들을 하나씩
+          열어보았다. 결국 열려 있는 문은 학생 동아리실 하나뿐이었다.
         </h4>
         <h4>
-          &nbsp;어떻게 해야 할지 정리되지 않은 생각 속에서 교실을 천천히
-          돌아다니다, 교탁 위에 놓인 상자 하나를 발견했다. 작고 묵직한 금속
-          상자. 영문 자물쇠로 잠겨 있었고, 그 위에 종이 한 장이 덩그러니 얹혀
-          있었다.
+          &nbsp;처음 들어오는 공간이었다. 다른 학생들도 자주 쓰지 않는 듯 항상
+          잠겨 있던, 잊힌 교실.
+        </h4>
+        <h4>
+          &nbsp;책상 위에는 수학 문제처럼 보이는 종이 한 장이 놓여 있었다.
         </h4>
       </div>
+      <h2 className="question">문제</h2>
       <img src="/q_img/q8.png" alt="문제 이미지" />
-      <p style={{ textAlign: 'center', fontSize: '1.1em', color: '#333', marginTop: '10px' }}>[Answer Type: 문자]</p>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-        <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
+      <p className="answer-type">[Answer Type: 숫자]</p>
+      <div className="answer-section">
+        <input type="text" placeholder="답 입력" id="ans" />
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
+          className="submit-button"
           onClick={() => {
-            if (document.getElementById("ans").value === "HIGH") {
-              fetch("https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans", {
-                method: "post",
-                credentials: "include",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ stage8: "clear" }),
-              })
+            if (document.getElementById("ans").value === "46000") {
+              fetch(
+                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
+                {
+                  method: "post",
+                  credentials: "include",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ stage8: "clear" }),
+                }
+              )
                 .then((res) => {
                   if (!res.ok) throw new Error("서버 응답 에러");
                   return res.json();

@@ -32,6 +32,8 @@ import Start11 from "./pages/start/start11/Start11.jsx";
 import Start11End from "./pages/start/start11/Start11-end.jsx";
 import Start12 from "./pages/start/start12/Start12.jsx";
 import Start12End from "./pages/start/start12/Start12-end.jsx";
+import Start13 from "./pages/start/start13/Start13.jsx";
+import Start13End from "./pages/start/start13/Start13-end.jsx";
 
 export default function Not() {
   return (
@@ -74,6 +76,8 @@ createRoot(document.getElementById("root")).render(
         <Route path="/start11-end" element={<Start11End />} />
         <Route path="/start12" element={<Start12 />} />
         <Route path="/start12-end" element={<Start12End />} />
+        <Route path="/start13" element={<Start13 />} />
+        <Route path="/start13-end" element={<Start13End />} />
         <Route path="/hall-of-fame" element={<Hall_of_fame />} />
         <Route path="*" element={<Not />}></Route>
       </Routes>

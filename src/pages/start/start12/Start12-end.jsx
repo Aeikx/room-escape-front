@@ -1,81 +1,60 @@
 import React from "react";
-import "./Start12.css";
+import "../start1/Start1.css";
 
 function Start12End() {
   return (
-    <div className="start12-container">
-      <h1>영어전용실 B - 12번째 방</h1>
-      <div>
+    <div className="end-container">
+      <h1>회의실</h1>
+      <div className="narrative-text">
         <h4>
-          &nbsp;종이가 의미하는 단어를 자물쇠에 입력하니 상자가 열렸다. 상자에는
-          잘 접어진 쪽지 한 장이 있었다.
+          &nbsp;자물쇠에 답이라 생각한 숫자를 입력했다. 자물쇠는 생각보다 쉽게
+          풀렸다.
         </h4>
         <h4>
-          &nbsp;'나는 문제를 내는 걸 좋아했다. 이상한 질문 같은 거. 정답은
-          하나지만, 가끔 다른 답도 괜찮아 보이면 더 재미있었다.
+          &nbsp;상자 속에는 쪽지 한 장만이 있었다. 그 외에는 다음 장소도,
+          비밀번호도, 아무런 단서도 적혀 있지 않았다.
         </h4>
         <h4>
-          &nbsp;사람들은 대충 넘겼지만, 가끔 진짜로 풀어보려는 사람이 있으면
-          기분이 좋았다.
+          &nbsp;'시계는 멎은 것이 아니라, 오히려 가장 깊숙한 맥박 아래서 그
+          진동을 잊힌 리듬으로 지속하고 있는 듯하다.
         </h4>
         <h4>
-          &nbsp;그중에서도 내가 마음에 드는 문제들은 따로 모아뒀다. 잘
-          만들었다고 생각한 것들. 언젠가 누군가 보여줄 수 있으면 좋겠다고
-          생각하면서.
+          &nbsp;호흡의 유무는 더 이상 나의 감각 안에 있지 않으며, 몸이라 불리던
+          형체는 지각의 수면 아래로 가라앉은 지 오래다.
         </h4>
         <h4>
-          &nbsp;혹시 그 친구가 이 쪽지를 봤다면, 지금쯤 그 문제들을 풀고
-          있을지도 모른다.
-        </h4>
-        <h4>&nbsp;그렇다면, 힘내. 이번 문제들도 내가 아끼는 것들이야.'</h4>
-        <h4>
-          &nbsp;쪽지의 의미를 곱씹어보기도 전에, 이걸 읽고 있을 시간이 있는 게
-          맞는가 싶었다. 어떻게든 이 교실을 벗어나야 한다는 생각이 먼저 들었다.
-          지금 나가도 모자랄 판에, 이런 상자를 열겠다고 시간을 쓴 게 후회됐다.
+          &nbsp;그럼에도 어딘가 단정되지 못한 것들이 있다. 말해지지 않았기에
+          지워지지 않고 남은 음(音)의 잔향들.
         </h4>
         <h4>
-          &nbsp;다시 교실을 둘러보다가, 열리지 않던 문으로 향했다. 문고리를 한
-          번 더 조심스럽게 돌려보았다.
+          &nbsp;나는 이 세계를 정리할 수 없었다. 정리되지 않은 수(數)와 문(文),
+          쌓여 있는 구조의 파편들, 내 미완의 기호들 속에 아직 닿지 못한 타인의
+          시선을 꿈꾸어왔다.
         </h4>
         <h4>
-          &nbsp;'철컥' 아무런 저항도 없이, 굳게 닫혀 있던 문이 아주 쉽게 열렸다.
+          &nbsp;언어 이전의 사고들이 이 연기 같은 자리에 남아 누군가의 발걸음
+          아래 잠시 머무를 수 있다면.
+        </h4>
+        <h4>
+          &nbsp;나는 존재하되 존재하지 않고, 기억되되 기억되지 않을 것이다.
+        </h4>
+        <h4>
+          그러나 그럼에도 불구하고 나의 부재 아래, 이 유예된 문제 하나가
+          누군가에게 의문으로 남기를 바란다.
+        </h4>
+        <h4>
+          <b>
+            만일 당신이 아니 오시면 나는 바람을 쐬고 눈비를 맞으며, 밤에서
+            낮까지 당신을 기다리고 있습니다. 당신은 물만 건너면 나를 돌아보지도
+            않고 가십니다그려. 그러나 당신이 언제든지 오실 줄만은 알아요. 나는
+            당신을 기다리면서 날마다 날마다 낡아갑니다.'
+          </b>
         </h4>
       </div>
-      <div className="start-container">
+      <div className="next-button-container">
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
-          onClick={() =>
-            fetch(
-              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/clear",
-              {
-                method: "get",
-                credentials: "include",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-              }
-            )
-              .then((res) => res.json())
-              .then((res) => {
-                if (res.success) {
-                  location.href = "/hall-of-fame";
-                } else {
-                  alert("문제를 다 풀어주세요");
-                  location.href = "/";
-                }
-              })
-          }
+          className="next-button"
+          onClick={() => (location.href = "/start13")}
         >
           다음
         </button>

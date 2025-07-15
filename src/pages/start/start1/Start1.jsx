@@ -3,10 +3,10 @@ import "./Start1.css";
 
 function Start1() {
   return (
-    <div className="start1-container">
-      <h1>영어전용실 B - 1번째 방</h1>
-      <img src="/env_img/env1.png" alt="방 이미지" />
-      <div>
+    <div className="start-container">
+      <h1>영어전용실 B</h1>
+      <img src="/env_img/env1.jpeg" alt="방 이미지" />
+      <div className="narrative-text">
         <h4>
           &nbsp;벽을 더듬어 조심스레 불을 켰다. 희미하게 켜지는 형광등 아래,
           익숙한 교실이 모습을 드러냈다. 우리 학교 신관, 영어전용실B. 오늘 7교시
@@ -15,9 +15,9 @@ function Start1() {
         <h4>
           &nbsp;문을 열어보려 했지만, 손잡이는 쉽게 돌아가지 않았다. 닫힌 문
           너머는 정적만이 감돌았다. 창밖의 풍경도 이상하게 느껴졌다. 늦은
-          시간이라는 건 알 수 있었지만, 그 시간까지도 내가 깨어나지 않았다는
-          점이 이상했다. 무엇보다, 안에서 사람이 있는지 확인도 하지 않고 누군가
-          문을 잠갔다는 건 납득되지 않았다.
+          시간이라는 건 알 수 있었지만,그 시간까지도 내가 깨어나지 않았다는 점이
+          이상했다. 무엇보다, 안에서 사람이 있는지 확인도 하지 않고 누군가 문을
+          잠갔다는 건 납득되지 않았다.
         </h4>
         <h4>
           &nbsp;주머니를 뒤졌지만, 휴대폰은 없었다. 수업 시간이라 소지하지 않고
@@ -30,53 +30,13 @@ function Start1() {
           있었다.
         </h4>
       </div>
+      <h2 className="question">문제</h2>
       <img src="/q_img/q1.png" alt="문제 이미지" />
-      <p
-        style={{
-          textAlign: "center",
-          fontSize: "1.1em",
-          color: "#333",
-          marginTop: "10px",
-        }}
-      >
-        [Answer Type: 문자]
-      </p>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "10px",
-          marginTop: "20px",
-        }}
-      >
-        <input
-          type="text"
-          placeholder="답 입력"
-          id="ans"
-          style={{
-            padding: "10px",
-            fontSize: "1em",
-            borderRadius: "5px",
-            border: "1px solid #ccc",
-            width: "80%",
-            maxWidth: "300px",
-          }}
-        />
+      <p className="answer-type">[Answer Type: 문자]</p>
+      <div className="answer-section">
+        <input type="text" placeholder="답 입력" id="ans" />
         <button
-          style={{
-            padding: "10px 20px",
-            fontSize: "1em",
-            backgroundColor: "#5a48a3",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            cursor: "pointer",
-            width: "80%",
-            maxWidth: "300px",
-            boxShadow: "0 2px 4px rgba(0,0,0,0.2)",
-            transition: "background-color 0.3s ease",
-          }}
+          className="submit-button"
           onClick={() => {
             if (document.getElementById("ans").value === "HIGH") {
               fetch(

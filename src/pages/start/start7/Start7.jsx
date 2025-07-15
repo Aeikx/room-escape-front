@@ -1,54 +1,44 @@
 import React from "react";
-import "./Start7.css";
+import "../start1/Start1.css";
 
 function Start7() {
   return (
-    <div className="start7-container">
-      <h1>영어전용실 B - 7번째 방</h1>
-      <img src="/env_img/env1.png" alt="방 이미지" />
-      <div>
+    <div className="start-container">
+      <h1>컴퓨터실</h1>
+      <img src="/env_img/env7.jpeg" alt="방 이미지" />
+      <div className="narrative-text">
         <h4>
-          &nbsp;벽을 더듬어 조심스레 불을 켰다. 희미하게 켜지는 형광등 아래,
-          익숙한 교실이 모습을 드러냈다. 우리 학교 신관, 영어전용실B. 오늘 7교시
-          수업 시간에 이곳에서 잠들었던 기억이 어렴풋이 떠올랐다.
+          &nbsp;불이 꺼진 넓은 컴퓨터실에 발을 들였다. 언제나처럼 상자를 먼저
+          찾으려 했지만, 어두운 실내에서 유일하게 빛을 내는 컴퓨터 모니터가 먼저
+          시야에 들어왔다.
         </h4>
         <h4>
-          &nbsp;문을 열어보려 했지만, 손잡이는 쉽게 돌아가지 않았다. 닫힌 문
-          너머는 정적만이 감돌았다. 창밖의 풍경도 이상하게 느껴졌다. 늦은
-          시간이라는 건 알 수 있었지만, 그 시간까지도 내가 깨어나지 않았다는
-          점이 이상했다. 무엇보다, 안에서 사람이 있는지 확인도 하지 않고 누군가
-          문을 잠갔다는 건 납득되지 않았다.
-        </h4>
-        <h4>
-          &nbsp;주머니를 뒤졌지만, 휴대폰은 없었다. 수업 시간이라 소지하지 않고
-          있었던 게 기억났다. 누구에게도 연락할 수 없는 상황이었다.
-        </h4>
-        <h4>
-          &nbsp;어떻게 해야 할지 정리되지 않은 생각 속에서 교실을 천천히
-          돌아다니다, 교탁 위에 놓인 상자 하나를 발견했다. 작고 묵직한 금속
-          상자. 영문 자물쇠로 잠겨 있었고, 그 위에 종이 한 장이 덩그러니 얹혀
+          &nbsp;그 자리로 다가가니, 컴퓨터는 켜진 상태였고 배경화면만 조용히 떠
           있었다.
         </h4>
+        <h4>
+          &nbsp;혹시 이걸로 누군가에게 연락할 수 있지 않을까 싶었지만 곧바로
+          인터넷 연결이 끊겨 있다는 걸 확인했다.
+        </h4>
+        <h4>
+          &nbsp;배경화면엔 ‘README’라는 이름의 텍스트 파일이 두 개 있었다. 내가
+          지금까지 움직여온 흐름처럼, 이 파일들 역시 누군가가 미리 놓아둔 다음
+          과정이라는 생각이 들었다.
+        </h4>
+        <h4>
+          &nbsp;첫 번째 파일은 알 수 없는 기호들로 가득 차 있었다. 둘째 파일은
+          암호화되어 있었고, 내용을 열람하려면 코드를 입력해야 했다.
+        </h4>
       </div>
+      <h2 className="question">문제</h2>
       <img src="/q_img/q7.png" alt="문제 이미지" />
-      <p style={{ textAlign: 'center', fontSize: '1.1em', color: '#333', marginTop: '10px' }}>[Answer Type: 문자]</p>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', marginTop: '20px' }}>
-        <input type="text" placeholder="답 입력" id="ans" style={{ padding: '10px', fontSize: '1em', borderRadius: '5px', border: '1px solid #ccc', width: '80%', maxWidth: '300px' }} />
+      <p className="answer-type">[Answer Type: 숫자]</p>
+      <div className="answer-section">
+        <input type="text" placeholder="답 입력" id="ans" />
         <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            backgroundColor: '#5a48a3',
-            color: 'white',
-            border: 'none',
-            borderRadius: '6px',
-            cursor: 'pointer',
-            transition: 'background-color 0.2s ease',
-            width: '100%',
-            marginTop: '20px'
-          }}
+          className="submit-button"
           onClick={() => {
-            if (document.getElementById("ans").value === "HIGH") {
+            if (document.getElementById("ans").value === "101") {
               fetch(
                 "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
                 {

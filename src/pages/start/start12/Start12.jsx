@@ -61,7 +61,7 @@ function Start12() {
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({ stage11: "clear" }),
+                  body: JSON.stringify({ stage12: "clear" }),
                 }
               )
                 .then((res) => {

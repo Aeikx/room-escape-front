@@ -33,16 +33,16 @@ function Login() {
             </div>
             <button
               style={{
-                padding: '12px 24px',
-                fontSize: '1rem',
-                backgroundColor: '#5a48a3',
-                color: 'white',
-                border: 'none',
-                borderRadius: '6px',
-                cursor: 'pointer',
-                transition: 'background-color 0.2s ease',
-                width: '100%',
-                marginTop: '20px'
+                padding: "12px 24px",
+                fontSize: "1rem",
+                backgroundColor: "#5a48a3",
+                color: "white",
+                border: "none",
+                borderRadius: "6px",
+                cursor: "pointer",
+                transition: "background-color 0.2s ease",
+                width: "100%",
+                marginTop: "20px",
               }}
               onClick={(e) => {
                 const userData = {
@@ -66,7 +66,10 @@ function Login() {
                 )
                   .then((res) => {
                     res.json();
-                    if (res) {
+                  })
+                  .then((res) => {
+                    console.log(res);
+                    if (res.loggedIn) {
                       location.href = "/";
                       alert("로그인 성공");
                     } else {

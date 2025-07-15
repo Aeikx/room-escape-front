@@ -39,12 +39,15 @@ function Start1() {
           className="submit-button"
           onClick={() => {
             const ans = document.getElementById("ans").value;
-            fetch("https://port-0-room-escape-...cloudtype.app/q_log", {
-              method: "POST",
-              credentials: "include",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ stage1: ans }),
-            }).catch((e) => console.warn("Logging Error:", e));
+            fetch(
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_log",
+              {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ answer: ans }),
+              }
+            ).catch((e) => console.warn("Logging Error:", e));
             if (ans === "HIGH") {
               fetch(
                 "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",

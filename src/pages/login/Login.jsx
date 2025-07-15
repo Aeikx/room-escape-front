@@ -45,6 +45,7 @@ function Login() {
                 marginTop: "20px",
               }}
               onClick={(e) => {
+                e.preventDefault();
                 const userData = {
                   Id: document.getElementById("id").value,
                   Pw: document.getElementById("password").value,
@@ -64,9 +65,7 @@ function Login() {
                     body: JSON.stringify(userData),
                   }
                 )
-                  .then((res) => {
-                    res.json();
-                  })
+                  .then((res) => res.json())
                   .then((res) => {
                     console.log(res);
                     if (res.loggedIn) {
@@ -77,7 +76,10 @@ function Login() {
                       location.reload();
                     }
                   })
-                  .catch(() => {})
+                  .catch((error) => {
+                    console.error("Login error:", error);
+                    alert("로그인 중 오류가 발생했습니다.");
+                  })
                   .finally(() => {
                     setTimeout(() => (e.target.disabled = false), 1000);
                   });

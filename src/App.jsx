@@ -39,7 +39,23 @@ function App() {
         <div className="button-group">
           <button
             className="main-button start-button"
-            onClick={() => (window.location.href = "/start")}
+            onClick={() => {
+              fetch(
+                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/check-login",
+                {
+                  credentials: "include", // ✅ HttpOnly 쿠키를 자동 포함시킴
+                }
+              )
+                .then((res) => res.json())
+                .then((data) => {
+                  if (!data.loggedIn) {
+                    alert("로그인이 필요합니다.");
+                    location = "/login";
+                  } else {
+                    location = "/start";
+                  }
+                });
+            }}
           >
             시작하기
           </button>

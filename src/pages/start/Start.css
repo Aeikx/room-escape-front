@@ -1,47 +1,81 @@
-.start-container {
+/* Container layout and typography (from your .start1-container guide) */
+.start1-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
+  padding: 10px 20px;
   min-height: 100vh;
-  padding: 60px 20px;
   background-color: #f7f7f7;
   font-family: "Segoe UI", sans-serif;
 }
 
-.start-container h1 {
+.start1-container h1 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #333;
 }
 
-.start-container img {
-  width: 320px;
+.start1-container img {
+  max-width: 320px;
   height: auto;
   margin-bottom: 25px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.start-container h3 {
-  font-size: 1.1rem;
+.start1-container div {
+  max-width: 640px;
+  text-align: left;
+  margin-top: 30px;
+  line-height: 1.75;
+}
+
+.start1-container h4 {
+  margin: 16px 0;
   color: #444;
-  text-align: center;
-  max-width: 80%;
-  margin-bottom: 30px;
+  font-weight: normal;
 }
 
-.start-container button {
+.start1-container input {
+  padding: 10px;
+  font-size: 1rem;
+  width: 320px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Flex row for stage links with consistent 16px gap */
+.stage-link-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+/* Stage link styling */
+.stage-link {
+  color: #5a48a3;
+  text-decoration: none;
+  font-weight: 500;
+}
+.stage-link:hover {
+  text-decoration: underline;
+}
+
+/* “다음” button styling */
+.next-button {
   padding: 12px 24px;
   font-size: 1rem;
   background-color: #5a48a3;
-  color: white;
+  color: #fff;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  width: 100%;
+  margin-top: 20px;
 }
-
-.start-container button:hover {
-  background-color: #3f2f7a;
+.next-button:hover {
+  background-color: #44337a;
 }

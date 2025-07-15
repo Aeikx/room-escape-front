@@ -13,7 +13,6 @@ function Header() {
       .then((res) => res.json())
       .then((data) => {
         if (data.loggedIn) {
-          console.log(data.userId, "로그인");
           document.getElementById("login").style.display = "None";
           document.getElementById("signup").style.display = "None";
           document.getElementById("logout").textContent =
@@ -36,7 +35,8 @@ function Header() {
   return (
     <header className="header">
       <div className="header-title">
-        <a href="/" style={{ textDecoration: "none", color: "inherit" }}>
+        {/* <img src="./logo.png" alt="logo" /> */}
+        <a href="/" style={{ textDecoration: 'none', color: 'inherit', fontWeight: 'bold', fontSize: '1.5rem', letterSpacing: '1px' }}>
           신관
         </a>
       </div>

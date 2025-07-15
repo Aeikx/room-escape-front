@@ -37,15 +37,25 @@ function Start10() {
         </h4>
       </div>
       <h2 className="question">문제</h2>
-      <h4>이 등식이 성립하기 위한 막대 이동의 최소 횟수는?</h4>
+      <h4>등식을 옳게 고치시오</h4>
       <img src="/q_img/q10.png" alt="문제 이미지" />
-      <p className="answer-type">[Answer Type: 숫자]</p>
+      <p className="answer-type">[Answer Type: 한국어]</p>
       <div className="answer-section">
         <input type="text" placeholder="답 입력" id="ans" />
         <button
           className="submit-button"
           onClick={() => {
-            if (document.getElementById("ans").value === "0") {
+            const ans = document.getElementById("ans").value;
+            fetch(
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_log",
+              {
+                method: "POST",
+                credentials: "include",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ answer: ans }),
+              }
+            ).catch((e) => console.warn("Logging Error:", e));
+            if (ans === "절댓값") {
               fetch(
                 "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
                 {

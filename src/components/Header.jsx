@@ -36,7 +36,16 @@ function Header() {
     <header className="header">
       <div className="header-title">
         {/* <img src="./logo.png" alt="logo" /> */}
-        <a href="/" style={{ textDecoration: 'none', color: 'inherit', fontWeight: 'bold', fontSize: '1.5rem', letterSpacing: '1px' }}>
+        <a
+          href="/"
+          style={{
+            textDecoration: "none",
+            color: "inherit",
+            fontWeight: "bold",
+            fontSize: "1.5rem",
+            letterSpacing: "1px",
+          }}
+        >
           신관
         </a>
       </div>

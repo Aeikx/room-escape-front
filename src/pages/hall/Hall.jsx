@@ -17,7 +17,8 @@ function Hall() {
     )
       .then((res) => res.json())
       .then((res) => {
-        setList(res);
+        const filteredList = res.filter(item => !item.except);
+        setList(filteredList);
       });
   }, []);
 

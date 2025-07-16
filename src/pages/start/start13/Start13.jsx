@@ -29,6 +29,7 @@ function Start13() {
         </h4>
       </div>
       <p className="answer-type">[Answer Type: 숫자]</p>
+      <h4>빨강 + 초록 + 파랑 = ?</h4>
       <div className="answer-section">
         <input type="text" placeholder="답 입력" id="ans" />
         <button

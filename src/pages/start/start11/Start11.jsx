@@ -15,7 +15,7 @@ function Start11() {
       <h2 className="question">문제</h2>
       <h4>빨강 + 노랑 = 800080</h4>
       <h4>노랑 + 파랑 = 008000</h4>
-      <h4>빨강 + 노랑 + 파랑 = ?</h4>
+      <h4>빨강 + 초록 + 파랑 = ?</h4>
       <p className="answer-type">[Answer Type: 숫자]</p>
       <div className="answer-section">
         <input type="text" placeholder="답 입력" id="ans" />

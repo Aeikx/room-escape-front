@@ -37,7 +37,7 @@ function Start10() {
         </h4>
       </div>
       <h2 className="question">문제</h2>
-      <h4>등식을 옳게 고치시오</h4>
+      <h4>최소 갯수의 성냥개비를 움직여 등식을 옳게 고치시오.</h4>
       <img src="/q_img/q10.png" alt="문제 이미지" />
       <p className="answer-type">[Answer Type: 한국어]</p>
       <div className="answer-section">
@@ -46,15 +46,6 @@ function Start10() {
           className="submit-button"
           onClick={() => {
             const ans = document.getElementById("ans").value;
-            fetch(
-              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_log",
-              {
-                method: "POST",
-                credentials: "include",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ answer: ans }),
-              }
-            ).catch((e) => console.warn("Logging Error:", e));
             if (ans === "절댓값") {
               fetch(
                 "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
@@ -64,7 +55,7 @@ function Start10() {
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({ stage10: "clear" }),
+                  body: JSON.stringify({ stage10: ans }),
                 }
               )
                 .then((res) => {

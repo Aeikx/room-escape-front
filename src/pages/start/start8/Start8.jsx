@@ -37,15 +37,6 @@ function Start8() {
           className="submit-button"
           onClick={() => {
             const ans = document.getElementById("ans").value;
-            fetch(
-              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_log",
-              {
-                method: "POST",
-                credentials: "include",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ answer: ans }),
-              }
-            ).catch((e) => console.warn("Logging Error:", e));
             if (ans === "46000") {
               fetch(
                 "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
@@ -55,7 +46,7 @@ function Start8() {
                   headers: {
                     "Content-Type": "application/json",
                   },
-                  body: JSON.stringify({ stage8: "clear" }),
+                  body: JSON.stringify({ stage8: ans }),
                 }
               )
                 .then((res) => {
@@ -74,7 +65,7 @@ function Start8() {
                   alert("서버 요청 실패");
                 });
             } else {
-              alert("틀렸습니다!");
+              alert("틀렸습니���!");
             }
           }}
         >

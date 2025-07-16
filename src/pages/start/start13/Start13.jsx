@@ -36,44 +36,31 @@ function Start13() {
           onClick={() => {
             const ans = document.getElementById("ans").value;
             fetch(
-              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_log",
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
               {
-                method: "POST",
+                method: "post",
                 credentials: "include",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ answer: ans }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ stage13: ans }),
               }
-            ).catch((e) => console.warn("Logging Error:", e));
-            if (ans === "592641") {
-              fetch(
-                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
-                {
-                  method: "post",
-                  credentials: "include",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({ stage13: "clear" }),
+            )
+              .then((res) => {
+                if (!res.ok) throw new Error("서버 응답 에러");
+                return res.json();
+              })
+              .then((data) => {
+                if (data.correct) {
+                  location.href = "/start13-end";
+                } else {
+                  alert("틀렸습니다!");
                 }
-              )
-                .then((res) => {
-                  if (!res.ok) throw new Error("서버 응답 에러");
-                  return res.json();
-                })
-                .then((data) => {
-                  if (data.success) {
-                    location.href = "/start13-end";
-                  } else {
-                    alert(data.message || "문제 풀이 실패");
-                  }
-                })
-                .catch((err) => {
-                  console.error("Fetch Error:", err);
-                  alert("서버 요청 실패");
-                });
-            } else {
-              alert("틀렸습니다!");
-            }
+              })
+              .catch((err) => {
+                console.error("Fetch Error:", err);
+                alert("서버 요청 실패");
+              });
           }}
         >
           제출

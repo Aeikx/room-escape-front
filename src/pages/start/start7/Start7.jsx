@@ -39,36 +39,32 @@ function Start7() {
           className="submit-button"
           onClick={() => {
             const ans = document.getElementById("ans").value;
-            if (ans === "101") {
-              fetch(
-                "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
-                {
-                  method: "post",
-                  credentials: "include",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({ stage7: ans }),
+            fetch(
+              "https://port-0-room-escape-md2eap8bfeb3cb79.sel5.cloudtype.app/q_ans",
+              {
+                method: "post",
+                credentials: "include",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ stage7: ans }),
+              }
+            )
+              .then((res) => {
+                if (!res.ok) throw new Error("서버 응답 에러");
+                return res.json();
+              })
+              .then((data) => {
+                if (data.correct) {
+                  location.href = "/start7-end";
+                } else {
+                  alert("틀렸습니다!");
                 }
-              )
-                .then((res) => {
-                  if (!res.ok) throw new Error("서버 응답 에러");
-                  return res.json();
-                })
-                .then((data) => {
-                  if (data.success) {
-                    location.href = "/start7-end";
-                  } else {
-                    alert(data.message || "문제 풀이 실패");
-                  }
-                })
-                .catch((err) => {
-                  console.error("Fetch Error:", err);
-                  alert("서버 요청 실패");
-                });
-            } else {
-              alert("틀렸습니다!");
-            }
+              })
+              .catch((err) => {
+                console.error("Fetch Error:", err);
+                alert("서버 요청 실패");
+              });
           }}
         >
           제출

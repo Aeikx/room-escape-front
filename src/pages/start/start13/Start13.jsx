@@ -1,5 +1,6 @@
 import React from "react";
 import "../start1/Start1.css";
+import { color } from "framer-motion";
 
 function Start13() {
   return (
@@ -29,7 +30,7 @@ function Start13() {
         </h4>
       </div>
       <p className="answer-type">[Answer Type: 숫자]</p>
-      <h4>빨강 + 초록 + 파랑 = ?</h4>
+      <h4>(확인 결과 이전에 존재하던 문제 텍스트는 오류)</h4>
       <div className="answer-section">
         <input type="text" placeholder="답 입력" id="ans" />
         <button
